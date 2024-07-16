@@ -1,5 +1,5 @@
 -- MacrobicPredator v1.0.0
--- SmoothSpatula
+-- SmoothSpatula/Neorit
 log.info("Successfully loaded ".._ENV["!guid"]..".")
 
 -- ========== Sprite ========== 

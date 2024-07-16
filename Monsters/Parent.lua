@@ -1,5 +1,5 @@
 -- Parent v1.0.0
--- SmoothSpatula
+-- SmoothSpatula/Neorit
 
 -- ========== Sprite ========== 
 

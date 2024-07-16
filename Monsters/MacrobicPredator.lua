@@ -1,5 +1,5 @@
 -- MacrobicPredator v1.0.0
--- SmoothSpatula
+-- SmoothSpatula/Neorit
 log.info("Successfully loaded ".._ENV["!guid"]..".")
 
 -- ========== Sprite ========== 
@@ -28,7 +28,16 @@ local jumpfall_sprite = gm.sprite_duplicate(gm.constants.sMacGFall)
 -- local hit_sprite = gm.sprite_add(hit_path, 1, false, false, 29, 45)
 
 --local palette_sprite = gm.sprite_add(hit_path, 1, false, false, 0, 0)
+-- Sprite Offsets
+-- gm.sprite_set_offset(idle_sprite, 25, 50)
+-- gm.sprite_set_offset(walk_sprite, 25, 45)
 
+-- gm.sprite_set_offset(jump_sprite, 27, 40)
+-- gm.sprite_set_offset(jumpfall_sprite, 27, 40)
+
+-- gm.sprite_set_offset(death_sprite, -10, 65)
+
+-- gm.sprite_set_offset(attack_sprite, 61, 70)
 gm.sprite_set_offset(loadout_sprite, 80, -90)
 
 gm.sprite_set_speed(idle_sprite, 1, 1)
