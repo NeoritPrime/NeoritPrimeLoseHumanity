@@ -6,15 +6,18 @@ log.info("Successfully loaded ".._ENV["!guid"]..".")
 
 local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortrait.png")
 local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortraitSmall.png")
-local skills_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill1.png")
+local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill1.png")
+local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill3.png")
 
 local portrait_sprite = gm.sprite_add(portrait_path, 1, false, false, 0, 0)
 local portraitsmall_sprite = gm.sprite_add(portraitsmall_path, 1, false, false, 0, 0)
-local skills_sprite = gm.sprite_add(skills_path, 1, false, false, 0, 0)
+local skills_sprite0 = gm.sprite_add(skills_path0, 1, false, false, 0, 0)
+local skills_sprite2 = gm.sprite_add(skills_path2, 1, false, false, 0, 0)
 local loadout_sprite = gm.sprite_duplicate(gm.constants.sMacGSpawn)
 local idle_sprite = gm.sprite_duplicate(gm.constants.sMacGIdle)
 local walk_sprite = gm.sprite_duplicate(gm.constants.sMacGShoot2_1)
 local attack_sprite0 = gm.sprite_duplicate(gm.constants.sMacGShoot1_1)
+local attack_sprite2 = gm.sprite_duplicate(gm.constants.sMacGSpawn)
 -- local shoot1_air_sprite = gm.sprite_add(shoot1_air_path, 7, false, false, 29, 45)
 -- local special_sprite = gm.sprite_duplicate(822)
 -- local utility_sprite = gm.sprite_duplicate(823)
@@ -48,24 +51,36 @@ MacrobicPredator, MacrobicPredator_id = setup_survivor(
     walk_sprite, idle_sprite, death_sprite, jump_sprite, jumpfall_sprite, jumpfall_sprite, nil,
     {["r"]=160, ["g"] = 115, ["b"] = 116}, {[1] = 0.0, [2] = - 20.0, [3] = 3.0}
 )
-
-setup_skill(MacrobicPredator.skill_family_z[0], "Primary attack", "Big tongue", 
-    skills_sprite, 1, attack_sprite0, 
-    0.0, 1.0, true, 188)
+--          skill_ref                         , name            , description ,sprite        ,sprite_subimage,animation      ,cooldown, damage, is_primary, skill_id
+setup_skill(MacrobicPredator.skill_family_z[0], "Primary attack", "Big tongue", skills_sprite0, 1             , attack_sprite0, 0.0    , 1.0   , true      , 188)
 
 setup_empty_skill(MacrobicPredator.skill_family_x[0])
-setup_empty_skill(MacrobicPredator.skill_family_c[0])
-setup_skill(MacrobicPredator.skill_family_v[0], "Primary attack", "Big tongue", 
-    skills_sprite, 1, attack_sprite0, 
-    0.0, 1.0, true, 189)
+
+setup_skill(MacrobicPredator.skill_family_c[0], "Rebirth", "Teleportation", 
+    skills_sprite2, 1, attack_sprite2, 
+    350.0, 1.0, false, 86)
+
+    -- setup_skill(Parent.skill_family_z[0], "Primary attack", "Crush them", 
+    -- skills_sprite, 1, attack_sprite0, 
+    -- 0.0, 1.0, true, 152)
+setup_empty_skill(MacrobicPredator.skill_family_v[0])
+
 --          survivor_id,         armor, attack_speed, movement_speed, critical_chance, damage, hp_regen, maxhp, maxbarrier, maxshield
 setup_stats(MacrobicPredator_id, 0.5  , nil         , nil           , nil            , 16    , 0.05    , 315  , nil       , nil)
 
 -- == Callback == -- 
+gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
+    if self.class ~= MacrobicPredator_id then return end
+    
+    local callback_id = args[1].value
+    if callback_id == MacrobicPredator.skill_family_c[0].on_activate then
+        gm._mod_instance_set_sprite(self, attack_sprite2) -- change the sprite dynamically
+    end
+end)
 -- gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
 --     if self.class == nil then return end
 --     local callback_id = args[1].value
---     if callback_id == Imp.skill_family_c[0].on_activate and self.class == Imp_id then
+--     if callback_id == MacrobicPredator.skill_family_c[0].on_activate and self.class == MacrobicPredator_id then
 --         if gm.actor_get_facing_direction(self) == 180 then
 --             self.x = self.x - 200
 --         else
