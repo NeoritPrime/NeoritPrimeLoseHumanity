@@ -4,3 +4,9 @@
 
 ### v0.0.1
 * Added Lemurian and Golem
+
+### v0.0.2
+
+* Alpha Release
+* Added Scavenger-unfinished
+* Added MacrobicPredator Teleport Skill

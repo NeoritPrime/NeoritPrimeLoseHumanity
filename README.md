@@ -2,9 +2,11 @@ Making a mod for playable monsters, improving the survivor making process
 
 THIS IS AN ALPHA, IT WILL BE BROKEN AND THINGS WILL CHANGE
 
+Many thanks to the person with the nickname Miguelito(SmoothSpatula)
+
 ## Current progress
 
-* Macrobic Predator - base skill + menu sprites
+* Macrobic Predator - base/teleport skill + menu sprites
 
 * Lemurian - base skill + menu sprites
 
@@ -13,6 +15,8 @@ THIS IS AN ALPHA, IT WILL BE BROKEN AND THINGS WILL CHANGE
 * Parent - base skill + menu sprites
 
 * Wisp, Archaic Wisp, Greater Wisp
+
+* Scavenger-unfinished
 
 ## Working on
 

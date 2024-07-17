@@ -1,7 +1,7 @@
 {
-	"name": "PlayableMonsters",
-	"version_number": "0.0.3",
-	"website_url": "https://github.com/SmoothSpatula/SmoothSpatula-PlayableMonsters",
+	"name": "LoseHumanity",
+	"version_number": "0.0.2",
+	"website_url": "https://github.com/NeoritPrime/NeoritPrimeLoseHumanity",
 	"description": "Project to add a bunch of existing monsters as playable characters. WORK IN PROGRESS",
 	"dependencies": [
 		"ReturnOfModding-ReturnOfModding-1.0.34"

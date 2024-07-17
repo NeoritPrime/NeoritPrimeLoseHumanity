@@ -123,6 +123,13 @@ setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 
         --player.maxhp = 1000
 --     end
 -- end)
+gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, args) -- scale 
+    if self.class == Scavenger_id then
+        args[3].value = args[3].value + 40.0 -- y value fix
+        args[4].value = 6.0 -- damage multi
+    end
+end)
+
 gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
     if self.class == nil then return end
     if args[1].value == Scavenger.skill_family_v[0].on_activate 
@@ -169,8 +176,3 @@ gm.post_script_hook(gm.constants.callback_execute, function(self, other, result,
     end
 end)
 -- fix damage multi
--- gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, args) -- scale 
---     if self.class == Scavenger_id then
---         args[4].value = 10.0 -- damage multi
---     end
--- end)
