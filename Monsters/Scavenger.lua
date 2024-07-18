@@ -125,7 +125,7 @@ setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 
 -- end)
 gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, args) -- scale 
     if self.class == Scavenger_id then
-        args[3].value = args[3].value + 40.0 -- y value fix
+        args[3].value = args[3].value - 100.0 -- y value fix
         args[4].value = 6.0 -- damage multi
     end
 end)

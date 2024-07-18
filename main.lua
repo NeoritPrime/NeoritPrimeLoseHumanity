@@ -191,6 +191,7 @@ gm.post_script_hook(gm.constants.stage_load_room, function(self, other, result, 
         include_survivor("Monsters/GreaterWisp")
         include_survivor("Monsters/ArchaicWisp")
         include_survivor("Monsters/Scavenger")
+        include_survivor("Monsters/ElderLemurian")
     end
 end)
 
