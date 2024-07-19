@@ -123,10 +123,16 @@ setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 
         --player.maxhp = 1000
 --     end
 -- end)
+gm.pre_script_hook(gm.constants.instance_create_depth, function(self, other, result, args)
+    --print_array(args)
+    if self.class == Scavenger_id and 
+    args[4].value == gm.constants.oBulletAttack then
+        args[2].value = args[2].value - 20
+    end
+end)
 gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, args) -- scale 
     if self.class == Scavenger_id then
-        args[3].value = args[3].value - 100.0 -- y value fix
-        args[4].value = 6.0 -- damage multi
+        args[4].value = 10.0 -- damage multi
     end
 end)
 

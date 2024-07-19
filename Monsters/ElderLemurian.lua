@@ -4,10 +4,10 @@ log.info("Successfully loaded ".._ENV["!guid"]..".")
 
 -- ========== Sprite ========== 
 
-local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortrait.png")
-local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortraitSmall.png")
-local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill1.png")
-local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill3.png")
+local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "ElderLemurianPortrait.png")
+local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "ElderLemurianPortraitSmall.png")
+local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "ElderLemurianSkill1.png")
+local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "ElderLemurianSkill3.png")
 
 local portrait_sprite = gm.sprite_add(portrait_path, 1, false, false, 0, 0)
 local portraitsmall_sprite = gm.sprite_add(portraitsmall_path, 1, false, false, 0, 0)
@@ -40,7 +40,7 @@ gm.sprite_set_offset(death_sprite, 85, 103)
 
 gm.sprite_set_offset(attack_sprite0, 85, 107)
 gm.sprite_set_offset(attack_sprite2, 85, 183)
-gm.sprite_set_offset(loadout_sprite, 75, 40)
+gm.sprite_set_offset(loadout_sprite, 95, 35)
 
 gm.sprite_set_speed(idle_sprite, 1, 1)
 gm.sprite_set_speed(attack_sprite0, 1, 1)
@@ -57,13 +57,13 @@ local ElderLemurian_id = -1
 local ElderLemurian = nil
 
 ElderLemurian, ElderLemurian_id = setup_survivor(
-    "Neorit", "ElderLemurian", "ElderLemurian", "Some kind of massive insect.", "...",
+    "Neorit", "ElderLemurian", "ElderLemurian", "The big one.", "...",
     loadout_sprite, portrait_sprite, portraitsmall_sprite, loadout_sprite,
     walk_sprite, idle_sprite, death_sprite, jump_sprite, jumpfall_sprite, jumpfall_sprite, nil,
     {["r"]=160, ["g"] = 115, ["b"] = 116}, {[1] = 0.0, [2] = - 20.0, [3] = 3.0}
 )
 --          skill_ref                         , name            , description ,sprite        ,sprite_subimage,animation      ,cooldown, damage, is_primary, skill_id
-setup_skill(ElderLemurian.skill_family_z[0], "Primary attack", "Big tongue", skills_sprite0, 1             , attack_sprite0, 0.0    , 1.0   , true      , 149)
+setup_skill(ElderLemurian.skill_family_z[0], "Primary attack", "Fire", skills_sprite0, 1             , attack_sprite0, 0.0    , 1.0   , true      , 149)
 
 setup_empty_skill(ElderLemurian.skill_family_x[0])
 
