@@ -16,7 +16,9 @@ Many thanks to the person with the nickname Miguelito(SmoothSpatula)
 
 * Wisp, Archaic Wisp, Greater Wisp
 
-* Scavenger-unfinished
+* Scavenger
+
+* ElderLemurian 
 
 ## Working on
 

@@ -10,3 +10,8 @@
 * Alpha Release
 * Added Scavenger-unfinished
 * Added MacrobicPredator Teleport Skill
+
+### v0.0.3
+
+* Added ElderLemurian
+* Finished with Scavenger

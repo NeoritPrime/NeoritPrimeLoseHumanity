@@ -1,6 +1,6 @@
 {
 	"name": "LoseHumanity",
-	"version_number": "0.0.2",
+	"version_number": "0.0.3",
 	"website_url": "https://github.com/NeoritPrime/NeoritPrimeLoseHumanity",
 	"description": "Project to add a bunch of existing monsters as playable characters. WORK IN PROGRESS",
 	"dependencies": [
