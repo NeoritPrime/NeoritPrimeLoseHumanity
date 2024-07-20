@@ -125,19 +125,19 @@ setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 
 -- end)
 gm.pre_script_hook(gm.constants.instance_create_depth, function(self, other, result, args)
     --print_array(args)
-    if self.class == Scavenger_id and 
+    if self and self.class == Scavenger_id and
     args[4].value == gm.constants.oBulletAttack then
         args[2].value = args[2].value - 20
     end
 end)
 gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, args) -- scale 
-    if self.class == Scavenger_id then
+    if self and self.class == Scavenger_id then
         args[4].value = 10.0 -- damage multi
     end
 end)
 
 gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
-    if self.class == nil then return end
+    if self and self.class == nil then return end
     if args[1].value == Scavenger.skill_family_v[0].on_activate 
     and self.class == Scavenger_id 
     and self.m_id <= 2.0 then
