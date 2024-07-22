@@ -192,6 +192,7 @@ gm.post_script_hook(gm.constants.stage_load_room, function(self, other, result, 
         include_survivor("Monsters/ArchaicWisp")
         include_survivor("Monsters/Scavenger")
         include_survivor("Monsters/ElderLemurian")
+        include_survivor("Monsters/Tardigrade")
     end
 end)
 
@@ -202,3 +203,5 @@ gm.post_script_hook(gm.constants.callback_execute, function(self, other, result,
         setup_sprites(self)
     end
 end)
+
+-- Test --
