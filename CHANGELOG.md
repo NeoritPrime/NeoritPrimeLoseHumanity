@@ -15,3 +15,8 @@
 
 * Added ElderLemurian
 * Finished with Scavenger
+
+### v0.0.4
+
+* Added Tardigrade
+* Some small updates

@@ -2,26 +2,26 @@ Making a mod for playable monsters, improving the survivor making process
 
 THIS IS AN ALPHA, IT WILL BE BROKEN AND THINGS WILL CHANGE
 
-Many thanks to the person with the nickname Miguelito(SmoothSpatula)
-
 ## Current progress
 
-* Macrobic Predator - base/teleport skill + menu sprites
+* Macrobic Family:Predator,Tardigrade
 
-* Lemurian - base skill + menu sprites
+* Lemurian Family:Basic,Elder
 
-* Golem - base skill + menu sprites
+* Guardians Family:Golem
 
-* Parent - base skill + menu sprites
+* Parent without children -_-
 
-* Wisp, Archaic Wisp, Greater Wisp
+* Wisp Family:Archaic,Greater,Basic
 
-* Scavenger
-
-* ElderLemurian 
+* Thief:Scavenger
 
 ## Working on
 
 * More guys
+
+## Special thanks
+
+* Many thanks to the person with the nickname Miguelito(SmoothSpatula)
 
 [Link to discord thread](https://discord.com/channels/1171745917272084550/1260987114376527962)
