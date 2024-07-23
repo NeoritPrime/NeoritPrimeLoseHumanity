@@ -7,16 +7,20 @@ log.info("Successfully loaded ".._ENV["!guid"]..".")
 local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortrait.png")
 local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorPortraitSmall.png")
 local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill1.png")
+local skills_path1 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill2.png")
 local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "MacrobicPredatorSkill3.png")
 
 local portrait_sprite = gm.sprite_add(portrait_path, 1, false, false, 0, 0)
 local portraitsmall_sprite = gm.sprite_add(portraitsmall_path, 1, false, false, 0, 0)
-local skills_sprite0 = gm.sprite_add(skills_path0, 1, false, false, 0, 0)
+local skills_sprite0= gm.sprite_add(skills_path0, 1, false, false, 0, 0)
+local skills_sprite1 = gm.sprite_add(skills_path1, 1, false, false, 0, 0)
 local skills_sprite2 = gm.sprite_add(skills_path2, 1, false, false, 0, 0)
+local skills_sprite3 = gm.sprite_add(skills_path3, 1, false, false, 0, 0)
 local loadout_sprite = gm.sprite_duplicate(gm.constants.sMacGSpawn)
 local idle_sprite = gm.sprite_duplicate(gm.constants.sMacGIdle)
 local walk_sprite = gm.sprite_duplicate(gm.constants.sMacGShoot2_1)
 local attack_sprite0 = gm.sprite_duplicate(gm.constants.sMacGShoot1_1)
+local attack_sprite1 = gm.sprite_duplicate(gm.constants.sMacGIdle)
 --local attack_sprite1 = gm.sprite_duplicate(gm.constants.sMacTSpawn)
 local attack_sprite_down = gm.sprite_duplicate(gm.constants.sMacGShoot1_2) --down
 local attack_sprite_up = gm.sprite_duplicate(gm.constants.sMacGShoot1_3) --up
@@ -45,6 +49,7 @@ gm.sprite_set_offset(loadout_sprite, 80, -90)
 
 gm.sprite_set_speed(idle_sprite, 1, 1)
 gm.sprite_set_speed(attack_sprite0, 1, 1)
+gm.sprite_set_speed(attack_sprite1, 5, 1)
 gm.sprite_set_speed(walk_sprite, 0.75, 1)
 --gm.sprite_set_speed(special_sprite, 1, 1)
 --gm.sprite_set_speed(utility_sprite, 1, 1)
@@ -72,10 +77,7 @@ setup_skill(MacrobicPredator.skill_family_c[0], "Rebirth", "Teleportation",
     skills_sprite2, 1, attack_sprite2, 
     350.0, 1.0, false, 86)
 
-    -- setup_skill(Parent.skill_family_z[0], "Primary attack", "Crush them", 
-    -- skills_sprite, 1, attack_sprite0, 
-    -- 0.0, 1.0, true, 152)
-setup_empty_skill(MacrobicPredator.skill_family_v[0])
+    setup_empty_skill(MacrobicPredator.skill_family_v[0])
 
 --          survivor_id,         armor, attack_speed, movement_speed, critical_chance, damage, hp_regen, maxhp, maxbarrier, maxshield
 setup_stats(MacrobicPredator_id, 0.5  , nil         , nil           , nil            , 16    , 0.05    , 315  , nil       , nil)
@@ -87,6 +89,22 @@ gm.post_script_hook(gm.constants.callback_execute, function(self, other, result,
     local callback_id = args[1].value
     if callback_id == MacrobicPredator.skill_family_c[0].on_activate then
         gm._mod_instance_set_sprite(self, attack_sprite2) -- change the sprite dynamically
+    end
+end)
+gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
+    if self.class ~= MacrobicPredator_id then return end
+    
+    local callback_id = args[1].value
+    if callback_id == MacrobicPredator.skill_family_x[0].on_activate then
+        gm._mod_instance_set_sprite(self, attack_sprite_up) -- change the sprite dynamically
+    end
+end)
+gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
+    if self.class ~= MacrobicPredator_id then return end
+    
+    local callback_id = args[1].value
+    if callback_id == MacrobicPredator.skill_family_v[0].on_activate then
+        gm._mod_instance_set_sprite(self, attack_sprite_down) -- change the sprite dynamically
     end
 end)
 -- gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)
@@ -123,3 +141,22 @@ gm.pre_script_hook(gm.constants.fire_explosion, function(self, other, result, ar
         args[4].value = 10.0 -- damage multi
     end
 end)
+-- Input functions --
+--[[
+input_players_get_status
+input_check_axis
+input_check_long_released
+input_check_double_pressed
+input_check_double
+input_check_repeat_opposing
+input_check_double_released
+input_check_any_input *
+input_check *
+input_check_press_most_recent
+input_check_released
+input_check_long
+input_check_opposing
+input_check_pressed
+input_check_long_pressed
+input_check_repeat
+]]--

@@ -1,5 +1,5 @@
--- PlayableMonsters v1.0.2
--- SmoothSpatula
+-- LoseHumanity v0.0.4
+-- Neorit/SmoothSpatula
 log.info("Successfully loaded ".._ENV["!guid"]..".")
 survivor_setup = require("./survivor_setup")
 

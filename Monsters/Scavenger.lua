@@ -93,7 +93,7 @@ setup_skill(Scavenger.skill_family_c[0], "Tecknology", "Teleportation",
     --178=rocket 177=buff 176=gun 175=guitar
 
 --          survivor_id,         armor, attack_speed, movement_speed, critical_chance, damage, hp_regen, maxhp, maxbarrier, maxshield
-setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 14    , 0.03    , 1315  , nil       , nil)
+setup_stats(Scavenger_id, 0.3  , nil         , nil           , nil            , 14    , 15    , 1315  , nil       , nil)
 
 -- == Callback == -- 
 -- gm.post_script_hook(gm.constants.callback_execute, function(self, other, result, args)

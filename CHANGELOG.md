@@ -20,3 +20,7 @@
 
 * Added Tardigrade
 * Some small updates
+
+### v0.0.4a
+
+* Uploadet normally
