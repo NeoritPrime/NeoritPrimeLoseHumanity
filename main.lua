@@ -1,4 +1,4 @@
--- LoseHumanity v0.0.4
+-- LoseHumanity v0.0.5
 -- Neorit/SmoothSpatula
 log.info("Successfully loaded ".._ENV["!guid"]..".")
 survivor_setup = require("./survivor_setup")
@@ -6,6 +6,7 @@ survivor_setup = require("./survivor_setup")
 local survivors = ... or {}
 
 local is_init = false
+
 
 function setup_skill(skill_ref, name, description, 
                     sprite, sprite_subimage,animation, 
@@ -59,10 +60,21 @@ function setup_survivor(namespace, identifier, name, description, end_quote,
                         loadout_sprite, portrait_sprite, portraitsmall_sprite, palette_sprite, 
                         walk_sprite, idle_sprite, death_sprite, jump_sprite, jump_peak_sprite, jumpfall_sprite, climb_sprite,
                         colour, cape_array)
-    
-    survivor_id = gm.survivor_create(namespace, identifier)
-    survivor = survivor_setup.Survivor(survivor_id)
 
+                        local CLASS_SURVIVOR = gm.variable_global_get("class_survivor")
+    local survivor_id = nil
+    for i=1, #CLASS_SURVIVOR do
+        if CLASS_SURVIVOR[i][1] == namespace and CLASS_SURVIVOR[i][2] == identifier then
+            survivor_id = i - 1
+            break
+        end
+    end
+
+    if survivor_id == nil then
+        survivor_id = gm.survivor_create(namespace, identifier)
+    end
+    survivor = survivor_setup.Survivor(survivor_id)
+    
     -- Configure Properties
     survivor.token_name = name
     survivor.token_name_upper = string.upper(name)
@@ -193,6 +205,7 @@ gm.post_script_hook(gm.constants.stage_load_room, function(self, other, result, 
         include_survivor("Monsters/Scavenger")
         include_survivor("Monsters/ElderLemurian")
         include_survivor("Monsters/Tardigrade")
+        include_survivor("Monsters/Nautilus")
     end
 end)
 
@@ -205,3 +218,45 @@ gm.post_script_hook(gm.constants.callback_execute, function(self, other, result,
 end)
 
 -- Test --
+
+-- gui.add_always_draw_imgui(function()
+--     if ImGui.IsKeyPressed(80) then --P
+
+--     end
+-- end)
+
+-- gm.pre_script_hook(gm.constants.__input_system_tick, function ()
+--     local old_number0 = nil
+--     local old_number1 = nil
+--     local number0 = gm.window_mouse_get_x()
+--     local number1 = gm.window_mouse_get_y() 
+--     if old_number0 ~= number0 then
+--         print(number0)
+--         old_number0 = number0
+--         if old_number1 ~= number1 then
+--             print(number1)
+--             old_number1 = number1
+--         end
+--     end
+-- end)
+
+-- local old_number = nil //Число уже которое появлялось больше не будет попадться пока не изменится
+-- gm.post_script_hook(gm.constants.__input_system_tick, function(self, other, result, args)
+--     local number = gm.window_mouse_get_y()
+--     if old_number ~= number then
+--         print(number)
+--         old_number = number
+--     end
+-- end)
+
+-- local myArray = {}
+-- gm.post_script_hook(gm.constants.__input_system_tick, function(self, other, result, args)
+--     local number = "anything"
+--     if not myArray[number] then
+--         myArray[number] = true
+--         print(number)
+--     end
+-- end)
+
+-- gm.display_get_width() Делает то что и написанно
+-- gm.display_get_height()
