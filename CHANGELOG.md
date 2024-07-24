@@ -24,3 +24,8 @@
 ### v0.0.5
 
 * Uploadet normally
+
+### v0.0.6
+
+* Added Nautilus
+* Added up/down attacks for Predator

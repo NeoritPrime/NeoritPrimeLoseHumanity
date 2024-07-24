@@ -5,16 +5,19 @@ THIS IS AN ALPHA, IT WILL BE BROKEN AND THINGS WILL CHANGE
 ## Current progress
 
 * Macrobic Family:Predator,Tardigrade
+Predator can attack up/down sides
 
-* Lemurian Family:Basic,Elder
+* Lemurian Family: Basic, Elder
 
-* Guardians Family:Golem
+* Guardians Family: Golem
 
 * Parent without children -_-
 
-* Wisp Family:Archaic,Greater,Basic
+* Deep Dark ~~Fantasy~~ Family: Nautilus
 
-* Thief:Scavenger
+* Wisp Family: Archaic, Greater, Basic
+
+* Bosses: Scavenger
 
 ## Working on
 
