@@ -5,7 +5,7 @@ THIS IS AN ALPHA, IT WILL BE BROKEN AND THINGS WILL CHANGE
 ## Current progress
 
 * Macrobic Family:Predator,Tardigrade
-Predator can attack up/down sides
+* Predator can attack up/down sides, but only if you use mouse
 
 * Lemurian Family: Basic, Elder
 

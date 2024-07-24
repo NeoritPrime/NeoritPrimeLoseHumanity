@@ -29,3 +29,7 @@
 
 * Added Nautilus
 * Added up/down attacks for Predator
+
+### v0.0.7
+
+* Discription updated...

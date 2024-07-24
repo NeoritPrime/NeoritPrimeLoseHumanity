@@ -4,10 +4,10 @@ log.info("Successfully loaded ".._ENV["!guid"]..".")
 
 -- ========== Sprite ========== 
 
-local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NutilusPortrait.png")
-local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NutilusPortraitSmall.png")
-local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NutilusSkill1.png")
-local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NutilusSkill3.png")
+local portrait_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NautilusPortrait.png")
+local portraitsmall_path = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NautilusPortraitSmall.png")
+local skills_path0 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NautilusSkill1.png")
+local skills_path2 = path.combine(_ENV["!plugins_mod_folder_path"], "Sprites", "NautilusSkill3.png")
 
 local portrait_sprite = gm.sprite_add(portrait_path, 1, false, false, 0, 0)
 local portraitsmall_sprite = gm.sprite_add(portraitsmall_path, 1, false, false, 0, 0)
